@@ -1,0 +1,12 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^python -c \"\nimport csv\nimport json\n\n# Read taxonomy\\.csv and extract primary_label column \\(species codes\\)\nspecies = \\[\\]\nwith open\\('C:\\\\\\\\Users\\\\\\\\chiranan\\\\\\\\Downloads\\\\\\\\taxonomy\\.csv'\\) as f:\n    reader = csv\\.DictReader\\(f\\)\n    for row in reader:\n        species\\.append\\(row\\['primary_label'\\]\\)\n\nprint\\(f'Extracted \\{len\\(species\\)\\} species from taxonomy\\.csv'\\)\nprint\\(f'First 5: \\{species\\[:5\\]\\}'\\)\nprint\\(f'Last 5: \\{species\\[-5:\\]\\}'\\)\n\n# Save to species\\.json\nwith open\\('C:\\\\\\\\Users\\\\\\\\chiranan\\\\\\\\Documents\\\\\\\\GitHub\\\\\\\\ML-Journey-2026\\\\\\\\species\\.json', 'w'\\) as f:\n    json\\.dump\\(species, f\\)\n\nprint\\(f'\\\\\\\\nSaved to species\\.json'\\)\n\"\n$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python -c \"\nimport json\n\nwith open\\('C:\\\\\\\\Users\\\\\\\\chiranan\\\\\\\\Documents\\\\\\\\GitHub\\\\\\\\ML-Journey-2026\\\\\\\\species\\.json'\\) as f:\n    species = json\\.load\\(f\\)\n\nprint\\(f'Total species: \\{len\\(species\\)\\}'\\)\nprint\\(f'First 10: \\{species\\[:10\\]\\}'\\)\nprint\\(f'Last 10: \\{species\\[-10:\\]\\}'\\)\n\n# Check for the 28 missing species\nmissing_from_v1 = \\['1491113', '25073', '47158son01', '47158son02', '47158son03', '47158son04', '47158son05', '47158son06', '47158son07', '47158son08', '47158son09', '47158son10', '47158son11', '47158son12', '47158son13', '47158son14', '47158son15', '47158son16', '47158son17', '47158son18', '47158son19', '47158son20', '47158son21', '47158son22', '47158son23', '47158son24', '47158son25', '517063'\\]\n\npresent = \\[s for s in missing_from_v1 if s in species\\]\nprint\\(f'\\\\\\\\nPreviously missing species now included: \\{len\\(present\\)\\}/28'\\)\n\"\n$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
